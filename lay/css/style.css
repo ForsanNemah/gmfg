@@ -1,0 +1,390 @@
+:root {
+    --background: #ebf0f9;
+    --primary: white;
+    --secondry: #005575;
+    --third: #219dd5;
+}
+@font-face {
+    font-family: 'Cairo';
+    src: url('../font/Cairo-Bold.ttf');
+    src: url('../font/Cairo-Regular.ttf');
+}
+/*************** Global ***************/
+* {
+    box-sizing: border-box;
+    font-family: 'Cairo';
+}
+body {
+    background-color: #f4f4f4;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+P, ul {
+    margin: 0;
+    padding: 0;
+}
+/*************** Bootstrap ***************/
+.row {
+    margin: 0;
+}
+.alert {
+    padding: 5px;
+    text-align: center;
+    margin: 3px 0;
+}
+/*************** Chosen ***************/
+.chosen-container.chosen-container-single {
+    display: block;
+    width: 100% !important;
+}
+/*************** Login ***************/
+.login {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: var(--background);
+    padding: 50px;
+    border-radius: 10px;
+    border-right: 10px solid var(--third);
+}
+@media (max-width: 342px) {
+    .login {
+        padding: 20px;
+    }
+}
+.login h3 {
+    color: var(--secondry);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.login form .form-group {
+    position: relative;
+}
+.login form .form-group input {
+    padding-left: 40px;
+}
+.login form .form-group input[type="password"] {
+    padding-right: 40px;
+}
+.login form .form-group i {
+    position: absolute;
+    font-size: 20px;
+    top: 40px;
+    color: var(--secondry);
+}
+.login form .form-group i:not(#showPassword) {
+    left: 10px;
+}
+.login form .form-group #showPassword {
+    right: 10px;
+    cursor: pointer;
+}
+.login form .form-group button {
+    margin-bottom: 10px;
+}
+.login .anchor {
+    display: flex;
+    justify-content: space-between;
+}
+.login .anchor a {
+    color: var(--secondry);
+}
+/*************** Topbar ***************/
+.topbar {
+    background-color: var(--background);
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: -46px -10px 30px black;
+}
+.topbar .title-arae > i {
+    font-size: 30px;
+    cursor: pointer;
+}
+.topbar .title-arae p {
+    margin-left: 10px;
+    color: var(--secondry);
+    font-size: 20px;
+    font-weight: bold;
+}
+.topbar .actions {
+    color: var(--secondry);
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+.topbar .actions > div {
+    margin: 0 5px;
+}
+.topbar .actions i {
+    cursor: pointer;
+    color: var(--secondry);
+    margin: 0 10px;
+}
+.topbar, .topbar .title-arae, .topbar .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.topbar .users-area {
+    position: relative;
+}
+.topbar .users-area div {
+    background-color: var(--primary);
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 200px;
+    text-align: center;
+    z-index: 99999;
+    border-radius: 0 0 10px 10px;
+    padding: 3px;
+    display: none;
+}
+.topbar .users-area div a {
+    display: block;
+    width: 100%;
+    color: var(--secondry);
+    font-size: 17px;
+    padding: 10px 3px;
+}
+.topbar .users-area div a:hover {
+    background-color: var(--third);
+    color: white;
+}
+@media (max-width: 991px) {
+    .topbar .title-arae p {
+        margin-right: 10px;
+    }
+    .topbar .title-arae p i {
+        font-size: 30px;
+    }
+    .topbar .title-arae p span {
+        display: none;
+    }
+}
+/*************** Sidebar ***************/
+.sidebar {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--background);
+    transition: .3s;
+    z-index: 99;
+}
+.sidebar .menu {
+    margin: 80px 15px;
+}
+.sidebar .menu li a {
+    color: var(--secondry);
+    margin-bottom: 5px;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+}
+.sidebar .menu li a span {
+    font-size: 17px;
+    font-weight: bold;
+}
+.sidebar .menu li .active {
+    background-color: var(--third);
+    color: var(--background);
+}
+.sidebar .menu li a:hover {
+    background-color: var(--third);
+    color: var(--background);
+}
+.showSidebar {
+    left: -200px;
+}
+@media (max-width: 991px) {
+    .sidebar {
+        left: -200px;
+    }
+    .showSidebar {
+        left: 0;
+    }
+}
+/*************** Content ***************/
+.content {
+    position: relative;
+    top: 50px;
+    left: 200px;
+    width: calc(100% - 200px);
+    transition: .3s;
+    padding: 10px;
+}
+@media (max-width: 321px) {
+    .content {
+        top: 70px;
+    }
+}
+.showContent {
+    left: 0;
+    width: 100%;
+}
+@media (max-width: 991px) {
+    .content {
+        left: 0;
+        width: 100%;
+    }
+}
+/*************** Navbar ***************/
+.navbar {
+    border-bottom: 2px solid var(--secondry);
+    margin: 0 15px 10px;
+    padding: 3px;
+}
+.navbar .navbar-brand {
+    color: var(--secondry);
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+.navbar ul {
+    margin: 5px 0;
+}
+.navbar ul li:not(:last-of-type) {
+    margin-right: 5px;
+}
+@media (max-width: 991px) {
+    .navbar ul li:not(:last-of-type) {
+        margin-bottom: 5px;
+        margin-right: 0;
+    }
+}
+.navbar ul a,.navbar ul a:hover,.navbar ul a:focus {
+    padding: 3px;
+    color: white;
+    font-size: 15px;
+}
+/*************** Panel ***************/
+.panel {
+    border: 2px solid var(--third);
+    margin-bottom: 10px;
+    border-radius: 10px 10px 0 0;
+}
+.panel .panel-heading {
+    padding: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: var(--third);
+    color: var(--primary);
+    text-align: center;
+}
+.panel .panel-body {
+    padding: 10px;
+}
+/*************** Form ***************/
+form .form-group {
+    position: relative;
+    padding: 0;
+}
+form .form-group label {
+    color: var(--secondry);
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+form .form-group select {
+    margin: 0;
+}
+form .form-group textarea {
+    resize: none;
+}
+form .form-group input,
+form .form-group select,
+form .form-group textarea {
+    width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 17px;
+    color: var(--secondry) !important;
+    direction: ltr;
+    border-radius: 5px;
+    display: block;
+}
+.chosen-container-single .chosen-single{
+    background: white !important;
+    font-size: 20px;
+    border: none;
+    color: var(--secondry);
+    padding: 5px;
+    height: 39px;
+}
+form .form-group button {
+    width: 100%;
+}
+/*************** Settings ***************/
+.settings a {
+    display: block;
+    background-color: var(--third);
+    color: var(--background);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.settings a i {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+.settings a p {
+    font-size: 20px;
+}
+/*************** Table ***************/
+table thead {
+    background-color: var(--secondry);
+    color: var(--background);
+}
+table tbody tr {
+    color: var(--secondry);
+    font-size: 17px;
+}
+table tbody tr td {
+    padding: 3px !important;
+    font-weight: bold;
+}
+table tbody tr td:hover {
+    background-color: var(--secondry);
+    color: var(--background);
+}
+table tbody tr:nth-child(odd) {
+    background-color: var(--background);
+    color: var(--secondry);
+}
+table tbody tr:nth-child(even) {
+    background-color: var(--third);
+    color: var(--background);
+}
+table th,
+table td {
+    border: 2px solid var(--secondry);
+    vertical-align: middle;
+    text-align: center;
+}
+table td a {
+    margin: 0 5px 3px;
+}
+/*************** Search ***************/
+.search {
+    display: none;
+    margin-bottom: 5px;
+}
+.search .form-group input {
+    border-radius: 5px;
+}
+.search .form-group {
+    padding: 0;
+    margin: 5px;
+}
